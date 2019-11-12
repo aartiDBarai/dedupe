@@ -1,0 +1,18 @@
+<h2>SELECT COLUMNS</h2>
+<br>
+<form action="/active_learning/" method="POST">
+{% csrf_token %}
+<h4>UNIQUE COLUMN:</h4><br>
+<select name="unique_col">
+	{%for col in cols%}
+	<option value="{{col}}">{{col}}</option>
+	{%endfor%}
+</select><br>
+<h4>DEDUPE COLUMNS</h4><br>
+{% for col in cols %}
+<input type="checkbox" name="{{col}}" value="{{col}}">{{col}}<br>
+{% endfor %}
+<br>
+<button type="submit">Submit</button>
+<input type="hidden" name="is_redirect" value="1">
+</form>

@@ -1,0 +1,25 @@
+{% for rec in que %}
+{% if loop.last %}
+{% for el in rec %}
+{{el}}
+{% endfor %}
+{% else %}
+{% for el in rec %}
+{{el}}<br>
+{% endfor %}
+<br>
+{% endif %}
+{% endfor %}
+
+
+<form action="/get_answer/" method="POST">
+  {% csrf_token %}
+  <input type="radio" name="answer" value="y" checked> Yes<br>
+  <input type="radio" name="answer" value="n"> No<br>
+  <input type="radio" name="answer" value="u"> Unsure<br>
+  <input type="radio" name="answer" value="f"> Finish
+  <button type="submit">Submit</button>
+  <input type="hidden" name="is_redirect" value="1">
+</form>
+
+

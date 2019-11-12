@@ -1,0 +1,8 @@
+<form method="POST" action="/sel_col/" enctype="multipart/form-data">
+{% csrf_token %}
+
+<input type="text" placeholder = "file name" name = "file_name" />
+<input type="file" accept=".csv" name="file">
+<button type="submit">Submit</button>
+<input type="hidden" name="is_redirect" value="1">
+</form>

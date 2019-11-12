@@ -1,0 +1,8 @@
+<h2>Successfully Deduped ..!</h2><br>
+
+<form method="POST" action="/download/">
+{% csrf_token %}
+	<h3>Download the file here</h3><br>
+	<button type="submit">Download</button>
+	<input type="hidden" name="is_redirect" value="1">
+</form>
